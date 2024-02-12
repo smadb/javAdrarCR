@@ -16,7 +16,7 @@ public class Main {
         grandeMaison.afficherSurface();
 
 
-        Vehicule moto = new Vehicule("Honda kekchoz",2,180);
+        Vehicule moto = new Vehicule("Honda kekchoz",2,200);
         Vehicule voiture = new Vehicule("Toyota Yaris",4,90);
 
         moto.afficherType();
@@ -26,9 +26,6 @@ public class Main {
         System.out.println("Vitesse de base : " + voiture.getVitesse());
 
         voiture.isFaster(moto);
-        moto.isFaster(voiture);
-
-        moto.boost();
 
         while(voiture.getVitesse() < moto.getVitesse()){
             voiture.boost();
@@ -38,6 +35,5 @@ public class Main {
         System.out.println("Vitesse après boost : " + voiture.getVitesse());
 
         voiture.isFaster(moto);
-        moto.isFaster(voiture);
     }
 }

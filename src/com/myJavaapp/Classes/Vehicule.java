@@ -17,6 +17,7 @@ public class Vehicule {
     }
 
     public void boost(){
+        System.out.println(this.nom + " accélère...");
         this.vitesse += 50;
     }
 
