@@ -5,11 +5,12 @@ public class Main {
 
         Habitation maisonVide = new Habitation();
 
-        Habitation petiteMaison = new Habitation("Petite Maison",20.00,22.50);
+        Habitation petiteMaison = new Habitation("Petite Maison",20.00,22.50,1);
 
-        Habitation grandeMaison = new Habitation("Grande Maison",320.80,502.10);
-        
+        Habitation grandeMaison = new Habitation("Grande Maison",320.80,502.10,4);
+
         System.out.println(maisonVide);
+
         petiteMaison.afficherSurface();
         grandeMaison.afficherSurface();
 
