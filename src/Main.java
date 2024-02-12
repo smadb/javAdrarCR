@@ -22,17 +22,9 @@ public class Main {
         moto.afficherType();
         voiture.afficherType();
 
-        System.out.println("Vitesse de base : " + moto.getVitesse());
-        System.out.println("Vitesse de base : " + voiture.getVitesse());
-
         voiture.isFaster(moto);
 
-        while(voiture.getVitesse() < moto.getVitesse()){
-            voiture.boost();
-        }
-
-        System.out.println("Vitesse après boost : " + moto.getVitesse());
-        System.out.println("Vitesse après boost : " + voiture.getVitesse());
+        voiture.depasser(moto);
 
         voiture.isFaster(moto);
     }

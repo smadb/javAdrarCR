@@ -47,6 +47,13 @@ public class Vehicule {
         }
     }
 
+    public void depasser(Vehicule autreVehicule){
+        while(this.vitesse < autreVehicule.vitesse){
+            this.boost();
+        }
+    }
+
+
     public void setNom(String nom) {
         this.nom = nom;
     }
