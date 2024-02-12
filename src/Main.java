@@ -1,4 +1,5 @@
 import com.myJavaapp.Classes.Habitation;
+import com.myJavaapp.Classes.Vehicule;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,21 @@ public class Main {
         petiteMaison.afficherSurface();
         grandeMaison.afficherSurface();
 
+
+        Vehicule moto = new Vehicule("Honda kekchoz",2,180);
+        Vehicule voiture = new Vehicule("Toyota Yaris",4,90);
+
+        moto.afficherType();
+        voiture.afficherType();
+
+        System.out.println("Vitesse de base : " + moto.getVitesse());
+        System.out.println("Vitesse de base : " + voiture.getVitesse());
+
+        moto.boost();
+        voiture.boost();
+
+        System.out.println("Vitesse après boost : " + moto.getVitesse());
+        System.out.println("Vitesse après boost : " + voiture.getVitesse());
 
     }
 }
