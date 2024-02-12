@@ -1,6 +1,6 @@
 package com.myJavaapp.Heritage;
 
-public class Guerrier extends Personnage{
+public class Guerrier extends Personnage implements Actions{
 
     private int bonusDefense;
     private int chanceParade;

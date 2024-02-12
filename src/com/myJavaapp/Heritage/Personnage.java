@@ -1,6 +1,6 @@
 package com.myJavaapp.Heritage;
 
-public class Personnage {
+public class Personnage implements Actions {
 
     private String nom;
     private int vie;

@@ -1,6 +1,6 @@
 package com.myJavaapp.Heritage;
 
-public class Assassin extends Personnage {
+public class Assassin extends Personnage implements Actions{
 
     private int bonusAttaque;
     private int chanceCrit;
