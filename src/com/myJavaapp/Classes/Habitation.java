@@ -16,8 +16,8 @@ public class Habitation {
         return longueur * largeur;
     }
 
-    public void afficherSurface(Double surface){
-       System.out.println(this.nom + " a une surface de " + surface + "m2");
+    public void afficherSurface(){
+       System.out.println(this.nom + " a une surface de " + this.surface() + "m2");
 
     }
 

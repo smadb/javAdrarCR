@@ -15,7 +15,7 @@ public class Main {
         double surfacePetiteMaison = petiteMaison.surface();
         double surfaceGrandeMaison = grandeMaison.surface();
 
-        petiteMaison.afficherSurface(surfacePetiteMaison);
-        grandeMaison.afficherSurface(surfaceGrandeMaison);
+        petiteMaison.afficherSurface();
+        grandeMaison.afficherSurface();
     }
 }
