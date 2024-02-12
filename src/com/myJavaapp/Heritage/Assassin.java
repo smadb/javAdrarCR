@@ -44,7 +44,7 @@ public class Assassin extends Personnage {
             return false;
         }
         else{
-            System.out.println("Assassin inflige un crit à " + (this.getAttaque()+this.bonusAttaque));
+            System.out.println("["+ this.getNom() + "]" + " inflige un crit à " + (this.getAttaque()+this.bonusAttaque));
             return true;
         }
     }

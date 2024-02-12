@@ -15,7 +15,7 @@ public class PartieClassique {
 
     public void lancerPartie(){
         String issueCombat;
-        System.out.println("Combat entre " + Joueur1.getNom() +"("+Joueur1.getVie()+"pv)" + " et " + Joueur2.getNom()+"("+Joueur2.getVie()+"pv)");
+        System.out.println("-------------" + "Combat entre " + Joueur1.getNom() +"("+Joueur1.getVie()+"pv)" + " et " + Joueur2.getNom()+"("+Joueur2.getVie()+"pv)"+"-------------");
         int i = 0;
         while(this.nbrTour >=0){
             i+=1;
@@ -42,17 +42,15 @@ public class PartieClassique {
             else {
                 vainqueur = Joueur2.getNom();
             }
-            issueCombat = vainqueur + " gagne le combat !";
+            issueCombat = "[" + vainqueur + "]" + " gagne le combat !";
         }
 
-        System.out.println(issueCombat);
-        this.afficherStats();
+        System.out.println("-------------" + issueCombat + "-------------");
 
     }
 
     private void afficherStats(){
-        System.out.println("PV "+ Joueur1.getNom() + " " + Joueur1.getVie());
-        System.out.println("PV "+ Joueur2.getNom() + " " + Joueur2.getVie());
+        System.out.println("["+Joueur1.getNom()+"]" + " " + Joueur1.getVie() +" PV" + " / " + Joueur2.getVie() +" PV" + " "+ "["+ Joueur2.getNom()+"]");
     }
 
 

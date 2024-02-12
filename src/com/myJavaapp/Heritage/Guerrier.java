@@ -43,7 +43,7 @@ public class Guerrier extends Personnage{
             return false;
         }
         else{
-            System.out.println("Guerrier se heal de " + this.bonusDefense);
+            System.out.println("["+this.getNom() + "]" + " se heal de " + this.bonusDefense);
             return true;
         }
     }
