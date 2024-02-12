@@ -34,6 +34,18 @@ public class Vehicule {
         System.out.println("Le véhicule "+this.nom + " est de type : "+this.detect());
     }
 
+    public void isFaster(Vehicule autreVehicule){
+        if(this.vitesse < autreVehicule.vitesse){
+            System.out.println("Avec votre " +this.nom + "("+this.vitesse +")" +" vous êtes moins rapide que "+autreVehicule.nom + "("+autreVehicule.vitesse +")");
+        }
+        else if(this.vitesse > autreVehicule.vitesse){
+            System.out.println("Avec votre " +this.nom + "("+this.vitesse +")" +" vous êtes plus rapide que "+ autreVehicule.nom + "("+autreVehicule.vitesse +")");
+        }
+        else{
+            System.out.println("EGALITE");
+        }
+    }
+
     public void setNom(String nom) {
         this.nom = nom;
     }

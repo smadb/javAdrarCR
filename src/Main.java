@@ -25,11 +25,19 @@ public class Main {
         System.out.println("Vitesse de base : " + moto.getVitesse());
         System.out.println("Vitesse de base : " + voiture.getVitesse());
 
+        voiture.isFaster(moto);
+        moto.isFaster(voiture);
+
         moto.boost();
-        voiture.boost();
+
+        while(voiture.getVitesse() < moto.getVitesse()){
+            voiture.boost();
+        }
 
         System.out.println("Vitesse après boost : " + moto.getVitesse());
         System.out.println("Vitesse après boost : " + voiture.getVitesse());
 
+        voiture.isFaster(moto);
+        moto.isFaster(voiture);
     }
 }
