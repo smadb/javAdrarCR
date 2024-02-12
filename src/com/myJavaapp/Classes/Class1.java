@@ -1,3 +1,5 @@
+package com.myJavaapp.Classes;
+
 public class Class1 {
     public String firstname;
     public String surname;
