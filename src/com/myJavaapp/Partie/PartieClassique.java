@@ -2,16 +2,20 @@ package com.myJavaapp.Partie;
 
 import com.myJavaapp.Heritage.Personnage;
 
+import java.lang.reflect.Array;
+
 public class PartieClassique {
     private Personnage Joueur1 = new Personnage();
     private Personnage Joueur2 = new Personnage();
     private int nbrTour;
+
 
     public PartieClassique(Personnage Joueur1, Personnage Joueur2,int nbrTour){
         this.Joueur1=Joueur1;
         this.Joueur2=Joueur2;
         this.nbrTour=nbrTour;
     }
+
 
     public void lancerPartie(){
         String issueCombat;
@@ -30,9 +34,11 @@ public class PartieClassique {
         }
         if(Joueur1.getVie()>0 && Joueur2.getVie()>0){
             issueCombat = "Le combat n'a pas de vainqueur ! ";
+
         }
         else if(Joueur1.getVie()<=0 && Joueur2.getVie()<= 0){
             issueCombat = "Les combattants se sont entretués !";
+
         }
         else{
             String vainqueur;
@@ -41,13 +47,14 @@ public class PartieClassique {
             }
             else {
                 vainqueur = Joueur2.getNom();
+
             }
             issueCombat = "[" + vainqueur + "]" + " gagne le combat !";
         }
-
         System.out.println("-------------" + issueCombat + "-------------");
 
     }
+
 
     private void afficherStats(){
         System.out.println("["+Joueur1.getNom()+"]" + " " + Joueur1.getVie() +" PV" + " / " + Joueur2.getVie() +" PV" + " "+ "["+ Joueur2.getNom()+"]");

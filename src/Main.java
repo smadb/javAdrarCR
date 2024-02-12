@@ -10,10 +10,10 @@ import com.myJavaapp.Partie.PartieClassique;
 public class Main {
     public static void main(String[] args) {
 
-        Assassin PersonnageAssassin = new Assassin("Assassin",20,8,2,20);
-        Guerrier PersonnageGuerrier = new Guerrier("Guerrier",30,4,6,20);
+        Assassin PersonnageAssassin = new Assassin("Assassin",100,20,2,30);
+        Guerrier PersonnageGuerrier = new Guerrier("Guerrier",300,6,10,50);
 
-        PartieClassique Partie1 = new PartieClassique(PersonnageGuerrier,PersonnageAssassin,10);
+        PartieClassique Partie1 = new PartieClassique(PersonnageGuerrier,PersonnageAssassin,50);
 
         Partie1.lancerPartie();
 

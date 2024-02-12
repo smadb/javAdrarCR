@@ -20,7 +20,6 @@ public class Assassin extends Personnage implements Actions{
     }
 
     public void attaquer(Personnage cible){
-        this.getNom();
         int vieCible = cible.getVie();
         int defenseCible = cible.getDefense();
 
