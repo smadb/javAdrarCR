@@ -17,15 +17,25 @@ public class Perso {
     }
 
     public void attaque(Perso cible){
+
+        int currentAttaque = this.currentAttaque(this.ATT);
+        int currentDefense = this.currentDefense(this.DEF);
+
+        int currentCibleAttaque = this.currentAttaque(cible.getATT());
+        int currentCibleDefense = this.currentDefense(cible.getDEF());
+
         if(cible.parade()){
+            this.messageCombat(cible.getNom()+" pare l'attaque de "+this.nom);
             if(cible.contrer()){
-                int valeurCounter = ((cible.getATT()/2)+this.DEF);
+                int valeurCounter = valueCounter(currentCibleAttaque,currentDefense);
                 if(valeurCounter>0){
-                    this.setPV(this.PV - ((cible.getATT()/2)+this.DEF)); // le contre inflige deux fois moins de dégats
+                    this.setPV(this.PV - (currentCibleAttaque/2)+currentDefense); // le contre inflige deux fois moins de dégats
                 }
                 else{
-                    this.setPV(this.PV - 1); //sinon au moins un PV de perdu
+                    valeurCounter=1;
+                    this.setPV(this.PV - valeurCounter); //sinon au moins un PV de perdu
                 }
+                this.messageCombat(cible.getNom()+" contre-attaque pour " + valeurCounter);
 
             }
             else {
@@ -33,13 +43,15 @@ public class Perso {
             return;
         }
         else{
-            int valeurAttaque = this.ATT - cible.getDEF();
+            int valeurAttaque = currentAttaque - currentCibleDefense;
             if(valeurAttaque > 0){
                 cible.setPV(cible.getPV()-valeurAttaque);
             }
             else{
-                cible.setPV(cible.getPV()-1);
+                valeurAttaque=1;
+                cible.setPV(cible.getPV()-valeurAttaque);
             }
+            messageCombat(this.nom + " attaque " + cible.getNom() + " infligeant "+ valeurAttaque +" dégats");
         return;
         }
     }
@@ -51,9 +63,74 @@ public class Perso {
 
     public boolean contrer(){
         return Math.round(Math.random() * 100) <= 50;
-
     }
 
+    public int valueCounter(int currentCibleAttaque,int currentDefense){
+        return (currentCibleAttaque)-currentDefense;
+    }
+
+    public int currentAttaque(int attaque){
+        double operateur = Math.round((Math.random()*100));
+        int v = -1;
+
+        if(operateur<=5){
+            v=0;
+            return v;
+
+        }
+
+        else if(operateur>5 && operateur<=50){
+            v= attaque / 2;
+            return v;
+
+        }
+
+        else if(operateur>50 && operateur<95){
+            v= attaque;
+            return v;
+        }
+
+        else if (operateur>95) {
+            v= attaque*2;
+            return v;
+        }
+    return v;
+    }
+
+    public int currentDefense(int defense){
+        double operateur = Math.round((Math.random()*100));
+        int v = -1;
+
+        if(operateur<=5){
+            v=0;
+            return v;
+
+        }
+
+        else if(operateur>5 && operateur<=50){
+            v= defense / 2;
+            return v;
+
+        }
+
+        else if(operateur>50 && operateur<95){
+            v= defense;
+            return v;
+
+        }
+
+        else if (operateur>95) {
+            v= defense*2;
+            return v;
+
+        }
+
+        return v;
+    }
+
+    public void messageCombat(String message){
+        System.out.println("-- " + message);
+    }
 
 
     public String getNom() {
