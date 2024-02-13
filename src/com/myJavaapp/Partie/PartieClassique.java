@@ -31,12 +31,34 @@ public class PartieClassique {
             System.out.println(" ");
             this.Joueur2.attaque(Joueur1);
             System.out.println(" ");
+
+            if(nbrTour<nbrTour/2){
+                this.Joueur1.buffStats();
+                this.Joueur2.buffStats();
+                System.out.println(" ");
+                this.Joueur1.attaque(Joueur2);
+                System.out.println(" ");
+                this.Joueur2.attaque(Joueur1);
+                System.out.println(" ");
+            }
+            if(nbrTour-i<10){
+                this.Joueur1.buffStats();
+                this.Joueur2.buffStats();
+                System.out.println(" ");
+                this.Joueur1.attaque(Joueur2);
+                System.out.println(" ");
+                this.Joueur2.attaque(Joueur1);
+                System.out.println(" ");
+            }
+
+
             this.afficherStats();
             System.out.println(" ");
             this.nbrTour -= 1;
             if(Joueur1.getPV() <= 0 || Joueur2.getPV()<=0){
                 this.nbrTour=-1;
             }
+
         }
         if(Joueur1.getPV()>0 && Joueur2.getPV()>0){
             issueCombat = "Le combat n'a pas de vainqueur ! ";

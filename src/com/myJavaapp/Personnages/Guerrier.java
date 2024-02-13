@@ -15,6 +15,11 @@ public class Guerrier extends Perso implements Compétences{
         renforcement();
     }
 
+    @Override
+    public void buffStats() {
+        setDEF(getDEF()*2);
+    }
+
     public void renforcement(){
         int v = (int) Math.round(Math.random()*100);
 

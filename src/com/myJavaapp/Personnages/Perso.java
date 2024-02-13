@@ -61,6 +61,10 @@ public class Perso implements Compétences {
         }
     }
 
+    @Override
+    public void buffStats() {
+        Compétences.super.buffStats();
+    }
 
     public boolean parade(){
         return Math.round(Math.random() * 100) <= this.ESQ;
