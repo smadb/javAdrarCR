@@ -1,6 +1,6 @@
 //import com.myJavaapp.Classes.Habitation;
 //import com.myJavaapp.Classes.Vehicule;
-import com.myJavaapp.Heritage.Personnage;
+
 import com.myJavaapp.Partie.PartieClassique;
 import com.myJavaapp.Personnages.Assassin;
 import com.myJavaapp.Personnages.Guerrier;
@@ -10,13 +10,13 @@ import com.myJavaapp.Personnages.Perso;
 public class Main {
     public static void main(String[] args) {
 
-        Perso J1 = new Perso("Olivier",50,10,16,30);
-        Perso J2 = new Perso("César",50,10,12,70);
+        Perso J1 = new Perso("Olivier",500,10,16,30);
+        Perso J2 = new Perso("César",500,10,12,70);
 
-        Assassin J3 = new Assassin("Assassin",100,10,8,50);
-        Guerrier J4 = new Guerrier("Guerrier",100,10,8,50);
+        Assassin J3 = new Assassin("Assassin",500,10,8,50);
+        Guerrier J4 = new Guerrier("Guerrier",500,10,8,50);
 
-    PartieClassique Partie1 = new PartieClassique(J3,J4,100);
+    PartieClassique Partie1 = new PartieClassique(J3,J4,300);
 
     Partie1.lancerPartie();
 

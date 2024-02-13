@@ -1,6 +1,6 @@
 package com.myJavaapp.Personnages;
 
-public class Perso {
+public class Perso implements Compétences {
     private String nom;
     private int PV;
     private int DEF;
@@ -16,13 +16,18 @@ public class Perso {
         this.ESQ=ESQ;
     }
 
+
     public void attaque(Perso cible){
+
+        specialComp(cible);
 
         int currentAttaque = this.currentAttaque(this.ATT);
         int currentDefense = this.currentDefense(this.DEF);
 
         int currentCibleAttaque = this.currentAttaque(cible.getATT());
         int currentCibleDefense = this.currentDefense(cible.getDEF());
+
+
 
         if(cible.parade()){
             this.messageCombat(cible.getNom()+" pare l'attaque de "+this.nom);
