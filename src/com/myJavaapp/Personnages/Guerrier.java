@@ -12,26 +12,27 @@ public class Guerrier extends Perso implements Compétences{
 
     @Override
     public void specialComp(Perso perso) {
-        heal();
+        renforcement();
     }
 
-    public void heal(){
+    public void renforcement(){
         int v = (int) Math.round(Math.random()*100);
 
         if(v<5){
-            this.setPV(getPV()-(getATT()/2));
-            System.out.println("**[FAIL]** Guerrier se blesse tout seul. (-"+ (getATT()/2)+"pv)");
+            this.setDEF(getDEF()-2);
+            System.out.println("**[FAIL]** Guerrier brise une partie de son armure. ("+ (getDEF())+"def)");
             return;
         }
         else if (v>=5 && v<=90) {
             return;
         }
         else if(v>90){
-            this.setPV(getPV()+getDEF());
-            System.out.println("**[BUFF]** Guerrier se heal (+"+getDEF()+"pv)");
-        } else if (v>99) {
+            this.setDEF(getDEF()+2);
+            System.out.println("**[BUFF]** Guerrier renforce son armure ("+getDEF()+"def)");
+        }  if (v>99) {
+            this.setDEF(getDEF()+2);
             this.setPV(getPV()+(getDEF()*10));
-            System.out.println("*****[SUPER BUFF]***** Guerrier se heal (+"+getDEF()+"pv)");
+            System.out.println("*****[SUPER BUFF]***** Guerrier renforce son armure et se heal (+"+getDEF()*20+"pv)");
 
         }
     }

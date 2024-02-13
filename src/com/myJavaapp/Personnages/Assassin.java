@@ -37,7 +37,7 @@ public class Assassin extends Perso implements Compétences{
             int difference = newValue - getATT();
             System.out.println("**[BUFF]** Assassin buff son arme (+"+ difference +"att)");
             setATT(newValue);
-        } else if (v>99) {
+        } if (v>99) {
             int newValue = (int) Math.round(getATT()*1.5);
             int difference = newValue - getATT();
             System.out.println("*****[SUPER BUFF]***** Assassin buff son arme une deuxième fois (+"+ difference +"att)");
